@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Working with APIs</title>
+</head>
+
+<body>
+    <script>
+        //Function to carryout GET REQUEST
+        async function getInfo() {
+            let result = await fetch('static/testapi.json',{
+                headers : {
+                    'Content-Type' : 'application/json',
+                    
+                }
+                
+            })
+            result = await result.json()
+            console.log(result.data)
+        }
+        getInfo()
+
+        //Function to carryout POST REQUEST
+        async function createInfo() {
+            let response = await fetch('api/test',{
+                method: 'POST',
+                headers : {
+                    'Content-Type' : 'application/json'
+                },
+                body :JSON.stringify({
+                    filename : 'testapi.json',
+                    fellow_data :{
+                    Name :'Fotsing',
+                    profession : 'Software Developer'
+                }
+                })
+            })
+            let data = await response.json()
+            console.log(data)
+            
+        }
+        createInfo()
+
+        //Function to carryout Delete Request
+        async function deleteInfo(){
+            let response = await fetch('api/delete/Name', {
+                method: 'DELETE',
+                headers : {
+                    'Accept' : 'application/json'
+
+                }
+            })
+            const data = await response.json()
+            if (response.ok){
+                console.log('staus deleted with success')
+            }
+            else {
+                console.log('An error occured.')
+            }
+
+        }
+        deleteInfo()
+    </script>
+</body>
+
+</html>

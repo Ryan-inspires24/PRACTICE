@@ -1,0 +1,71 @@
+<style>
+    * {
+        font: 1em sans-serif;
+
+    }
+
+    form {
+        width: 500px;
+        height: 100px;
+    }
+</style>
+
+<form>
+    <img src="user.png" alt="User" height="64" width="64">
+    <input type="text" name="topic" size="30" value="Type Your Question Here">
+
+    <input type="button" value="Ask a Question"><br>
+
+    <a href="form.html" stype="margin:5px">Help?</a>
+</form>
+<ul id="list"></ul>
+
+<script>
+    //---Using document properties
+    // const list = document.getElementById('list')
+    // list.innerHTML += '<li> Linked From: ' + document.referrer
+    // list.innerHTML += '<li> Title' + document.title
+    // list.innerHTML += '<li> URL' + document.URL
+    // list.innerHTML += '<li> Domain' + document.domain
+    // list.innerHTML += '<li> Last Modified' + document.lastModified
+    const list = document.getElementById('list')
+    list.innerHTML += '<li> Numbeer of Forms = ' + document.forms.length
+    list.innerHTML += '<li> Number of links = ' + document.links.length
+    list.innerHTML += '<li> Number of Stylesheet = ' + document.styleSheets.length
+    list.innerHTML += '<li> Number of scripts = ' + document.scripts.length
+    list.innerHTML += '<li> First Form Element Value = ' + document.forms[0].elements[0].value
+
+        //control Structures - Switch alternatives
+        let month
+        switch (5 - 1)
+        {
+            case 1: month= 'January'; break
+            case 2: month = 'February'; break
+            case 3: month = 'March'; break
+            case 4: month = 'April'; break 
+            case 5: month = "May"; break
+            case 6: month = 'June'; break
+
+        }
+        console.log('it is ' + month)
+
+        //loop For
+        for (j=0; j<10; j++){
+            console.log(j)
+        }
+    
+    let i=-1
+    while(i<10){
+        console.log(i)
+        i--;
+    }
+
+    let j = 0
+    do 
+    {
+        console.log('do while iteration' + j)
+        j++
+    }
+    while (j>5)
+
+</script>

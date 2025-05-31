@@ -1,0 +1,61 @@
+{
+    "status": 200,
+    "data": {
+        "id": "2",
+        "name": "The AMC Lite",
+        "handle": "the-amc-lite",
+        "type": "Default",
+        "status": "ACTIVE",
+        "verified": true,
+        "visibility": "PRIVATE",
+        "settings": {
+            "join_call_to_action": "Join",
+            "enable_activity_feed": true,
+            "members_create_posts": true,
+            "display_members_panel": true
+        },
+        "dateCreated": "1649244618",
+        "lastUpdated": null,
+        "meta": [],
+        "profile": {
+            "description": "Hey... Got a gist? Tell us about it here.",
+            "picture": "https://res.cloudinary.com/ayudigital/image/upload/v1649244617/loading-icon-animated-gif-19.gif"
+        },
+        "posts": 158,
+        "admins": [
+            {
+                "id": "2",
+                "clubId": "2",
+                "role": "admin",
+                "status": "PENDING",
+                "dateJoined": "1649244618",
+                "lastUpdated": null,
+                "profile": [],
+                "activities": [],
+                "meta": [],
+                "user": {
+                    "id": 5,
+                    "profile": {
+                        "city": "Lagos",
+                        "country": "GB",
+                        "description": "CodenNerd of life\n",
+                        "email": "aatanda.dammy@gmail.com",
+                        "firstName": "Abdulazeez",
+                        "gender": "male",
+                        "lastName": "Atanda",
+                        "location_city": "Lagos",
+                        "location_country": "GB",
+                        "picture": "https://res.cloudinary.com/demo/image/upload/v1666173805/activitybg11_bsaw7c.jpg"
+                    }
+                }
+            }
+        ],
+        "members": 1,
+        "campaigns": 1
+    },
+    "profession": "Software Developer",
+    "fellow_data": {
+        "Name": "Fotsing",
+        "profession": "Software Developer"
+    }
+}
