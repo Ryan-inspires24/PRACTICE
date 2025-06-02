@@ -25,7 +25,7 @@
         "admins": [
             {
                 "id": "2",
-                "clubId": "2",
+                "clubId": 3,
                 "role": "admin",
                 "status": "PENDING",
                 "dateJoined": "1649244618",
@@ -53,7 +53,7 @@
         "members": 1,
         "campaigns": 1
     },
-    "profession": "Software Developer",
+    "profession": "Web Designer",
     "fellow_data": {
         "Name": "Fotsing",
         "profession": "Software Developer"

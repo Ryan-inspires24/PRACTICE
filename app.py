@@ -53,7 +53,59 @@ def delete_field(Name):
     return jsonify({
         'message': f'Deletion of object with key : {Name} successful!'
     }),200
+    
+@app.route('/api/modify/<profession>', methods=['PUT'])
+def modify_field(profession):
+    required_data = request.get_json()
+    updated_info = required_data.get('profession')
+    
+    file_path = f'static/testapi.json'
+    try:
+        with open(file_path, 'r') as file:
+            original_data = json.load(file)
+        if  not profession in original_data:
+            return jsonify({
+                'message' : f'Key : {profession} not found'
+            }), 404
+    except FileNotFoundError:
+            return jsonify({
+                'error' : 'File not Found'
+            }), 500
+    original_data['profession'] = updated_info
+    
+    with open(file_path, 'w') as update:
+        json.dump(original_data, update, indent=4)
+    return jsonify({
+        'message' : f'Field with key: {profession} updated with success!'
+    }), 200
+        
+@app.route('/api/patch/<data>/<admins>', methods=['PATCH'])
+def patch_data(data, admins):
+    patched_data = request.get_json()
+    new_info = patched_data.get('clubId')
+    
+    file_path = f'static/testapi.json'
+    try:    
+
+        with open(file_path, 'r') as file:
+            main_data = json.load(file)
+    except FileNotFoundError :
+        return jsonify({
+            'error' : "File Not Found Error"
+        }), 500
+        
+    try:
+        main_data[data][admins][0]['clubId'] = new_info
+    except (KeyError, IndexError):
+        return jsonify({
+            'Admins list or club Id jey not found'
+        }),404
+    with open(file_path, 'w') as file:
+        json.dump(main_data, file, indent=4)
+    return jsonify({
+        'message':'Successful Patching of admins Data'
+    })
+        
 if __name__== '__main__':
     app.run(debug = True)
-    
     
